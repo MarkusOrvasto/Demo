@@ -1,0 +1,38 @@
+﻿@model AspNetWebDemo.Models.Ad_login
+@{
+    ViewData["Title"] = "Home Page";
+}
+<body>
+    <div>
+        <div class="text-center">
+            <h1 class="display-4">Tervetuloa!</h1>
+            <p>Ole hyvä ja kirjaudu sisään jatkaaksesi.</p>
+            <div>
+                <div>
+                    <form class="form-horizontal" asp-action="Index">
+                        <div class="text-center">
+                            <label class="control-label">Käyttäjätunnus</label>
+                            <input asp-for="LoginName" type="text" size="24" />
+                        </div>
+                        <div class="text-center">
+                            <label class="control-label">Salasana</label>
+                            <input asp-for="LoginPassword" type="password" size="30" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Login" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class=" ´=col-sm-4"></div>
+        </div>
+    </div>
+</body>
+    @{
+        if (TempData["msg"] != null)
+        {
+            <script>
+            alert('@TempData["msg"]');
+            </script>
+        }
+    }
